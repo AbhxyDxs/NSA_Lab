@@ -9,6 +9,7 @@ case $selection in
 	"+") echo "$(($a+$b))" ;;
 	"-") echo "$(($a-$b))" ;;
 	"*") echo "$(($a*$b))" ;;
-	"/") echo "scale=4;$a/$b" | bc ;;
+	"/") div=$(echo "scale=2;$a/$b" | bc)
+		echo "Division : $div" ;;
 	*) echo "Enter Valid Operation" ;;
 esac
